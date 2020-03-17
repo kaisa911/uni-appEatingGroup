@@ -17,11 +17,11 @@ npm install
 - 运行项目
 
 ```bash
-npm run dev:mp-wechat
+npm run dev:mp-weixin
 ```
 
 - 打包
 
 ```bash
-npm run build:mp-wechat
+npm run build:mp-weixin
 ```
