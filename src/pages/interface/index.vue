@@ -3,7 +3,6 @@
     <image class="logo" src="../../static/logo.png"></image>
 		<view>
       <text class="title">{{title}}</text>
-      <text>{{nickname}}</text>
     </view>
 	</view>
 </template>
@@ -12,8 +11,7 @@
 import { Component,Vue } from "vue-property-decorator";
 @Component({})
 export default class Idnex extends Vue{
-  private　title:string  = 'interface'; //响应式属性
-  private nickname:string = this.$store.state.nickname
+  private title:string  = 'interface'; //响应式属性
 
 	onLoad(){
 		let a:string = '123'; 
