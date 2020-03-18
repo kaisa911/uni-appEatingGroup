@@ -1,17 +1,22 @@
 <template>
 	<view class="content">
-    <image class="logo" src="../../static/logo.png"></image>
-		<view>
-      <text class="title">{{title}}</text>
-      <text class="title">{{stateNickname}}</text>
-    </view>
+		<swiper @handleEmit="handleEmit"></swiper>
+		<!-- <view>
+      		<text class="title">{{title}}</text>
+      		<text class="title">{{stateNickname}}</text>
+    	</view> -->
 	</view>
 </template>
 
 <script lang="ts">
 import { Component,Vue } from "vue-property-decorator";
 import { State, Mutation } from "vuex-class";
-@Component({})
+import swiper from './../../components/swiper.vue'
+@Component({
+	components:{
+		swiper
+	}
+})
 export default class Idnex extends Vue{
 	private　title:string  = 'myTitle'; //响应式属性
 	@State('nickname') private stateNickname!: string;
@@ -20,8 +25,12 @@ export default class Idnex extends Vue{
 
 	onLoad(){
 		let a:string = '123'; 
-		this.CHANGENICKNAME('10')
-	}			
+		this.CHANGENICKNAME('10');
+	}
+	
+	handleEmit(argument:any){
+		console.log('我有点懵啊',argument)
+	}
 }
 </script>
 
