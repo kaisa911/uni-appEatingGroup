@@ -18,19 +18,19 @@
 <script lang="ts">
 	import {Component, Prop, Vue, Emit, Watch } from "vue-property-decorator";
 	import { State, Mutation,namespace } from "vuex-class";
+
+	// 获取模块中的state
 	const fishLanMutation = namespace('fishLan', Mutation);
-	
-	// const fishLan = namespace('fishLan');
 
 	@Component
 	export default class swiper extends Vue{
-
+		
 		//vuex 中获取store
 		@State(state => state.fishLan.menuList) private menuList!: string;
-	
+		
+		//-------以下两种方式都可以获取子模块下的mucation
     	// @fishLanMutation  setMenuList:any;
-		// @Mutation('fishLan/setMenuList') private setMenuList!: any;
-
+		@Mutation('fishLan/setMenuList') private setMenuList!: any;
 
 		//相当于原来的prop 这里 !和可选参数?是相反的, !告诉TypeScript我这里一定有值.
 		// @Prop(Number) propA!: number;
@@ -76,9 +76,16 @@
 			console.log('监听',val);
 		}
 
-		onLoad(){
-			// this.setMenuList();
+		mounted() {
+			this.setMenuList();
+			console.log('mounted.................')
 		}
+
+		onLoad(){
+        	console.log('The page is on load success')
+    	}
+
+
 	}
 </script>
 <style lang="scss">
