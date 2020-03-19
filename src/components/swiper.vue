@@ -22,6 +22,8 @@
 	// 获取模块中的state
 	const fishLanMutation = namespace('fishLan', Mutation);
 
+	
+
 	@Component
 	export default class swiper extends Vue{
 		
@@ -80,11 +82,6 @@
 			this.setMenuList();
 			console.log('mounted.................')
 		}
-
-		onLoad(){
-        	console.log('The page is on load success')
-    	}
-
 
 	}
 </script>

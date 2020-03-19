@@ -26,6 +26,7 @@ export default class Idnex extends Vue{
 	onLoad(){
 		let a:string = '123'; 
 		this.CHANGENICKNAME('10');
+		console.log(' 1111')
 	}
 	
 	handleEmit(argument:any){
