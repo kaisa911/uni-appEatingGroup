@@ -2,8 +2,8 @@
 	<view class="swiper-panel">
 		<!-- <button @click="emitTodo">测试</button> -->
 		<swiper class="swiper" :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration">
-			<swiper-item v-for="(item,index) in menuList" :key="index">
-				<image style="width:100%;height:100%;"  :src="item.imageUrl"></image>
+			<swiper-item v-for="(item,index) in swiperList" :key="index">
+				<image  :src="item.imageUrl" class="swiper-image"></image>
 			</swiper-item>
 		</swiper>
 	</view>
@@ -11,22 +11,23 @@
 
 <script lang="ts">
 	import {Component, Prop, Vue, Emit, Watch } from "vue-property-decorator";
-	import { State, Mutation,namespace } from "vuex-class";
+	import { State, Mutation, Action,namespace } from "vuex-class";
 
 	// 获取模块中的state
 	const fishLanMutation = namespace('fishLan', Mutation);
-
-	
 
 	@Component
 	export default class swiper extends Vue{
 		
 		//vuex 中获取store
-		@State(state => state.fishLan.menuList) private menuList!: string;
+		@State(state => state.fishLan.swiperList) private swiperList!: string;
 		
 		//-------以下两种方式都可以获取子模块下的mucation
-    	// @fishLanMutation  setMenuList:any;
-		@Mutation('fishLan/setMenuList') private setMenuList!: any;
+    	// @fishLanMutation  setSwiperItem:any;
+		@Mutation('fishLan/setSwiperItem') private setSwiperItem!: any;
+
+
+		@Action('fishLan/setSwiper') private setSwiper!: any;
 
 		//相当于原来的prop 这里 !和可选参数?是相反的, !告诉TypeScript我这里一定有值.
 		// @Prop(Number) propA!: number;
@@ -38,6 +39,7 @@
 		// private propA!:string;
 		// @Prop([String,Number])
 		// private propB!:string|number;
+		// @Prop({ default: false, type: Boolean }) radio!: boolean;
 		@Prop(Number) swiperData!: number;  
 
 		//相当于原来的data
@@ -73,16 +75,16 @@
 		}
 
 		mounted() {
-			this.setMenuList();
-			console.log('mounted.................')
+			this.setSwiper();
 		}
 
 	}
 </script>
 <style lang="scss">
 	.swiper-panel{
-		.swiper{
-			width: 100%;
+		.swiper-image{
+			width:100%;
+			height:100%;
 		}
 	}
 </style>

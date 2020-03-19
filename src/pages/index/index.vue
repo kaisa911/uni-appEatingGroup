@@ -1,6 +1,8 @@
 <template>
 	<view class="content">
 		<swiper @handleEmit="handleEmit"></swiper>
+		<entrance></entrance>
+		<recommCourses></recommCourses>
 		<!-- <view>
       		<text class="title">{{title}}</text>
       		<text class="title">{{stateNickname}}</text>
@@ -11,10 +13,14 @@
 <script lang="ts">
 import { Component,Vue } from "vue-property-decorator";
 import { State, Mutation } from "vuex-class";
-import swiper from './../../components/swiper.vue'
+import swiper from './../../components/swiper.vue';
+import entrance from './../../components/moduleEntrance.vue';
+import recommCourses from './../../components/recommCourses.vue';
 @Component({
 	components:{
-		swiper
+		swiper,
+		entrance,
+		recommCourses
 	}
 })
 export default class Idnex extends Vue{
