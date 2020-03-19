@@ -3,14 +3,8 @@
 		<!-- <button @click="emitTodo">测试</button> -->
 		<swiper class="swiper" :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration">
 			<swiper-item v-for="(item,index) in menuList" :key="index">
-				<image style="width:100%;height:100%; background-color: #eeeeee;"  :src="item.imageUrl"></image>
+				<image style="width:100%;height:100%;"  :src="item.imageUrl"></image>
 			</swiper-item>
-			<!-- <swiper-item>
-				<view class="swiper-item uni-bg-green" style="background:#993344;width:100%;height:100%"></view>
-			</swiper-item>
-			<swiper-item>
-				<view class="swiper-item uni-bg-blue" style="background:#98709;width:100%;height:100%"></view>
-			</swiper-item> -->
 		</swiper>
 	</view>
 </template>
