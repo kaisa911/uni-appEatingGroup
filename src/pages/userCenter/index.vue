@@ -11,7 +11,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { State, Mutation } from 'vuex-class';
-import NavList from './navList.vue';
+import NavList from './components/navList.vue';
 import userMixin from './userMixin';
 import request from '../../utils/request';
 import api from '../../utils/api';
@@ -71,6 +71,6 @@ export default class Idnex extends Vue {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import './user.scss';
 </style>
