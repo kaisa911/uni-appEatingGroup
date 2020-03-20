@@ -23,6 +23,60 @@
       "style": {
         "navigationBarTitleText": "服务条款"
       }
+    },
+    {
+      "path": "pages/userCenter/about/index",
+      "style": {
+        "navigationBarTitleText": "关于FITLIFE"
+      }
+    },
+    {
+      "path": "pages/userCenter/feedback/index",
+      "style": {
+        "navigationBarTitleText": "客服反馈"
+      }
+    },
+    {
+      "path": "pages/userCenter/consumeRecord/index",
+      "style": {
+        "navigationBarTitleText": "消费记录"
+      }
+    },
+    {
+      "path": "pages/userCenter/sportsRecord/index",
+      "style": {
+        "navigationBarTitleText": "运动记录"
+      }
+    },
+    {
+      "path": "pages/userCenter/myCoupon/index",
+      "style": {
+        "navigationBarTitleText": "我的优惠券"
+      }
+    },
+    {
+      "path": "pages/userCenter/editInfo/index",
+      "style": {
+        "navigationBarTitleText": "修改信息"
+      }
+    },
+    {
+      "path": "pages/userCenter/myCard/index",
+      "style": {
+        "navigationBarTitleText": "我的卡包"
+      }
+    },
+    {
+      "path": "pages/userCenter/myCurriculum/index",
+      "style": {
+        "navigationBarTitleText": "我的课程"
+      }
+    },
+    {
+      "path": "pages/userCenter/myOrder/index",
+      "style": {
+        "navigationBarTitleText": "我的预定"
+      }
     }
   ],
   "globalStyle": {

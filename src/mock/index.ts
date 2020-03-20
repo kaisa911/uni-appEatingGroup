@@ -24,6 +24,9 @@ const mockFunc = (url: string): any => {
         },
       });
       break;
+    case api.feedback:
+      data = {};
+      break;
     default:
       data = {};
   }

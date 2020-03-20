@@ -48,11 +48,11 @@ export default class Idnex extends Vue {
     cardName: '贵宾卡'
   };
   private navList = [
-    { name: '我的优惠券', url: '' },
-    { name: '运动记录', url: '' },
-    { name: '消费记录', url: '' },
-    { name: '关于FITLIFE', url: '' },
-    { name: '客服反馈', url: '' },
+    { name: '我的优惠券', url: '/pages/userCenter/myCoupon/index' },
+    { name: '运动记录', url: '/pages/userCenter/sportsRecord/index' },
+    { name: '消费记录', url: '/pages/userCenter/consumeRecord/index' },
+    { name: '关于FITLIFE', url: '/pages/userCenter/about/index' },
+    { name: '客服反馈', url: '/pages/userCenter/feedback/index' },
     { name: '服务条款', url: '/pages/userCenter/services/index' }
   ];
 
