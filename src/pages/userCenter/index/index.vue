@@ -45,7 +45,8 @@ export default class Idnex extends Vue {
     nextLevel: 0,
     balance: 0,
     myOrder: 0,
-    cardName: '贵宾卡'
+    cardName: '贵宾卡',
+    cardType: ''
   };
   private navList = [
     { name: '我的优惠券', url: '/pages/userCenter/myCoupon/index' },
@@ -82,15 +83,31 @@ export default class Idnex extends Vue {
   }
   // 跳转到卡包，预约，兑换券页
   private handleToPossession(index: number): void {
-    console.log(index);
+    const list: string[] = [
+      '/pages/userCenter/myOrder/index',
+      '/pages/userCenter/myCard/index',
+      '/pages/userCenter/myCurriculum/index'
+    ];
+
+    uni.navigateTo({
+      url: list[index - 1]
+    });
   }
 
   // 编辑信息
-  private handleEditInfo(): void {}
+  private handleEditInfo(): void {
+    uni.navigateTo({
+      url: '/pages/userCenter/editInfo/index'
+    });
+  }
   // 购卡
   private handleBuyCard(): void {}
   // 查看权益
-  private handleViewRight(): void {}
+  private handleViewRight(): void {
+    uni.navigateTo({
+      url: '/pages/viewRight/index?cardType=' + this.userInfo.cardType
+    });
+  }
 }
 </script>
 

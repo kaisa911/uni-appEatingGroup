@@ -77,6 +77,12 @@
       "style": {
         "navigationBarTitleText": "我的预定"
       }
+    },
+    {
+      "path": "pages/viewRight/index",
+      "style": {
+        "navigationBarTitleText": "会员权益"
+      }
     }
   ],
   "globalStyle": {

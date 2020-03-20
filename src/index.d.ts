@@ -20,6 +20,7 @@ declare namespace Global {
     balance: number;
     myOrder: number;
     cardName: string;
+    cardType: string;
   }
 
   interface IReturn {

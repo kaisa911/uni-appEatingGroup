@@ -21,6 +21,7 @@ const mockFunc = (url: string): any => {
           'balance|+1': 322,
           'myOrder|+1': 3,
           'cardName|1': ['私教卡', '贵宾卡', '团课年卡'],
+          'cardType|1': ['year', 'vip', 'coach'],
         },
       });
       break;
