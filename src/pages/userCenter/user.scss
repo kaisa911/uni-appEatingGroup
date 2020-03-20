@@ -145,3 +145,14 @@
     }
   }
 }
+
+.services {
+  padding: 32rpx;
+  font-size: 24rpx;
+  line-height: 26px;
+  .bold {
+    font-weight: bold;
+    font-size: 28rpx;
+    margin: 10rpx 0;
+  }
+}

@@ -17,12 +17,12 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { State, Mutation } from 'vuex-class';
-import NavList from './components/navList.vue';
-import MyPosscession from './components/possession.vue';
-import UserInfo from './components/userInfo.vue';
+import NavList from '../components/navList.vue';
+import MyPosscession from '../components/possession.vue';
+import UserInfo from '../components/userInfo.vue';
 import userMixin from './userMixin';
-import request from '../../utils/request';
-import api from '../../utils/api';
+import request from '../../../utils/request';
+import api from '../../../utils/api';
 
 @Component({
   name: 'UserCenter',
@@ -53,7 +53,7 @@ export default class Idnex extends Vue {
     { name: '消费记录', url: '' },
     { name: '关于FITLIFE', url: '' },
     { name: '客服反馈', url: '' },
-    { name: '服务条款', url: '' }
+    { name: '服务条款', url: '/pages/userCenter/services/index' }
   ];
 
   onLoad() {
@@ -78,7 +78,7 @@ export default class Idnex extends Vue {
   }
   // 跳转到相关页面
   private handleToPages(url: string): void {
-    console.log(url);
+    uni.navigateTo({ url });
   }
   // 跳转到卡包，预约，兑换券页
   private handleToPossession(index: number): void {
@@ -95,5 +95,5 @@ export default class Idnex extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import './user.scss';
+@import '../user.scss';
 </style>

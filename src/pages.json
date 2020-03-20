@@ -13,9 +13,15 @@
       }
     },
     {
-      "path": "pages/userCenter/index",
+      "path": "pages/userCenter/index/index",
       "style": {
         "navigationBarTitleText": "个人中心"
+      }
+    },
+    {
+      "path": "pages/userCenter/services/index",
+      "style": {
+        "navigationBarTitleText": "服务条款"
       }
     }
   ],
@@ -44,7 +50,7 @@
         "text": "课程"
       },
       {
-        "pagePath": "pages/userCenter/index",
+        "pagePath": "pages/userCenter/index/index",
         "iconPath": "static/image/user.png",
         "selectedIconPath": "static/image/user_HL.png",
         "text": "我的"
