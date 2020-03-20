@@ -1,10 +1,13 @@
 <template>
-  <view id="nav-list">
-    <view :key="item.url" v-for="(item) in navList">
-      <view @click="handleClickItem(item)" class="list-item">
-        <text class="item-name">{{item.name}}</text>
-        <text class="arrow"></text>
-      </view>
+  <view class="nav-list">
+    <view
+      :key="item.url"
+      @click="handleClickItem(item)"
+      class="list-item"
+      v-for="(item) in navList"
+    >
+      <text class="item-name">{{item.name}}</text>
+      <text class="arrow"></text>
     </view>
   </view>
 </template>
@@ -49,4 +52,5 @@ export default class NavList extends Vue {
 </script>
 
 <style lang="scss" scoped>
+@import '../user.scss';
 </style>
