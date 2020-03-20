@@ -8,4 +8,23 @@ declare namespace Global {
   interface IState {
     nickname: string;
   }
+
+  interface IUserInfo {
+    id: string;
+    name: string;
+    avatar: string;
+    calorie: number;
+    level: number;
+    levelScore: number;
+    nextLevel: number;
+    balance: number;
+    myOrder: number;
+    cardName: string;
+  }
+
+  interface IReturn {
+    code: number;
+    msg: string;
+    data: any;
+  }
 }

@@ -1,0 +1,147 @@
+.user-center {
+}
+
+.nav-list {
+  border-top: 2rpx solid #f1f1f1;
+  .list-item {
+    position: relative;
+    display: flex;
+    height: 80rpx;
+    align-items: center;
+    border-bottom: 2rpx solid #f1f1f1;
+    padding-left: 20rpx;
+    font-size: 28rpx;
+    color: #444;
+    .arrow:after {
+      content: ' ';
+      display: inline-block;
+      height: 16rpx;
+      width: 16rpx;
+      border-width: 2rpx 2rpx 0 0;
+      border-color: #666;
+      border-style: solid;
+      transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+      position: absolute;
+      top: 50%;
+      margin-top: -10rpx;
+      right: 30rpx;
+    }
+  }
+}
+
+.my-posscession {
+  display: flex;
+  margin: 20rpx 0;
+  .item {
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+    .item-image {
+    }
+    .item-image-img {
+      width: 80rpx;
+      height: 80rpx;
+      border-radius: 50%;
+    }
+    .border {
+      border-right: 1px solid #ccc;
+    }
+    .item-number {
+      border-radius: 20rpx;
+      border: 1px solid #e3e3e3;
+      font-size: 20rpx;
+      display: inline-block;
+      width: 160rpx;
+      padding: 4rpx 20rpx;
+      color: #666;
+    }
+    .item-title {
+      color: #666;
+      font-size: 28rpx;
+    }
+  }
+}
+
+.user-info {
+  height: 240rpx;
+  border-bottom: 1px solid #f1f1f1;
+  background: #f7f4e8;
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  .info-top {
+    flex: 2;
+    display: flex;
+    margin: 20rpx 20rpx 10rpx 20rpx;
+    .top-left {
+      width: 140rpx;
+      height: 140rpx;
+      .avatar {
+        width: 140rpx;
+        height: 140rpx;
+        border-radius: 50%;
+      }
+    }
+    .top-right {
+      flex: 1;
+      margin: 10rpx 20rpx;
+      .name {
+        .button {
+          border: 1rpx solid #999;
+          display: inline-block;
+          padding: 0rpx 10rpx;
+          font-size: 20rpx;
+          border-radius: 5rpx;
+          margin-left: 30rpx;
+          color: #999;
+        }
+      }
+      .credits {
+        font-size: 24rpx;
+        margin-top: 20rpx;
+        .credits-info {
+          display: flex;
+          .blank {
+            flex: 1;
+          }
+        }
+        .progress-bar {
+          margin-top: 20rpx;
+          /* 进度条的槽 */
+          width: 100%;
+          /* 设置进度条的高度 */
+          height: 5px;
+          /*进度条外层div的背景色，进度未达到的地方的颜色 */
+          background-color: #d6ddd9;
+
+          border-radius: 3px;
+        }
+        .progress {
+          /* 进度部分 */
+          /* 利用继承父元素宽度的百分比控制进度 */
+          height: 100%;
+          /* 内层背景色即进度达到的颜色 */
+          background-color: #89dbd7;
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+  .info-bottom {
+    margin: 0 20rpx;
+    flex: 1;
+    display: flex;
+    color: #666;
+    font-size: 28rpx;
+    justify-content: space-between;
+    .button {
+      display: inline-block;
+      margin: 0 40rpx;
+      border: 1px solid #777;
+      border-radius: 10rpx;
+      padding: 2rpx 14rpx;
+      height: 30rpx;
+      line-height: 30rpx;
+    }
+  }
+}
