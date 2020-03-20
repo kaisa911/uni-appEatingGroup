@@ -49,9 +49,14 @@
     },
     "mp-weixin": { /* 小程序特有相关 */
         "usingComponents":true,
-        "appid": "",
+        "appid": "wx3f114a1c7a0ef144",
         "setting" : {
         	"urlCheck" : true
+        },
+        "permission" : {
+            "scope.userLocation": {
+                "desc": "请允许获取地理位置，否则小程序无法继续"
+            }
         }
     },
     "mp-alipay" : {

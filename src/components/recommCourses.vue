@@ -66,12 +66,10 @@
                 height:100px;
                 margin-bottom: 10px;
             }
-
             .recomm-item-image{
                 width:150px;
                 background:#eee;
             }
-
             .recomm-item-info{
                 display: flex;
                 flex-direction: column;
@@ -95,10 +93,5 @@
                 }
             }
         }
-
-        
-
-        
     }
-
 </style>
