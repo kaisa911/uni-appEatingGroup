@@ -1,8 +1,14 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+
+import fishLan from './module/fishLan';
+
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
+  modules: {
+    fishLan
+  },
   state: {
     nickname: '未设置',
   },
