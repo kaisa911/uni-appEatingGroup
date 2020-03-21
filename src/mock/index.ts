@@ -28,6 +28,19 @@ const mockFunc = (url: string): any => {
     case api.feedback:
       data = {};
       break;
+    case api.getEditInfo:
+      data = Mock.mock({
+        'name|1': ['鲁大壮', '苏大强'], //名字为随机中文名字
+        'gender|1': ['男', '女'],
+        height: 183,
+        weight: 80,
+        birthday: '1991-11-16',
+        phone: '13000001111',
+      });
+      break;
+    case api.submitEditInfo:
+      data = {};
+      break;
     default:
       data = {};
   }
