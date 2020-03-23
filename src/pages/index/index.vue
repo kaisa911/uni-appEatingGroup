@@ -13,9 +13,9 @@
 <script lang="ts">
 import { Component,Vue } from "vue-property-decorator";
 import { State, Mutation } from "vuex-class";
-import swiper from './../../components/swiper.vue';
-import entrance from './../../components/moduleEntrance.vue';
-import recommCourses from './../../components/recommCourses.vue';
+import swiper from './../../components/index/swiper.vue';
+import entrance from './../../components/index/moduleEntrance.vue';
+import recommCourses from './../../components/index/recommCourses.vue';
 @Component({
 	components:{
 		swiper,
@@ -49,9 +49,6 @@ export default class Idnex extends Vue{
 						},
 						success: (res) => {
        		 				console.log('原本要在这里保存 openId的')
-						},
-						fail:(res) => {
-       		 				console.log('.......error')
 						}
 					})
 
@@ -64,8 +61,6 @@ export default class Idnex extends Vue{
     					data: '23AS45MMffdsaffdsafas343',				
 					});
 
-				} else {
-					console.log('登录失败！' + res.errMsg)
 				}
 			}
 		})
@@ -73,13 +68,12 @@ export default class Idnex extends Vue{
 
 	//判断是有获取地理位置的权限
 	isGetLocation(){
-		let _this=this;
 		uni.getSetting({
-		    success(res) {					 
+		    success: (res) =>{					 
 				if (!res.authSetting['scope.userLocation']) { 
-					_this.setAuthorizeInfo()
+					this.setAuthorizeInfo()
 				}else{
-					_this.getLocationInfo()
+					this.getLocationInfo()
 				}
 			}
 		});
@@ -87,15 +81,12 @@ export default class Idnex extends Vue{
 	
 	//设置授权
 	setAuthorizeInfo(){
-		let _this=this;
 		uni.authorize({
 			scope: 'scope.userLocation',
-			success() {
-				_this.getLocationInfo();
-				console.log('成功。userLocation。。。')
+			success:()=> {
+				this.getLocationInfo();
 			},
 			fail(){
-				console.log('失败userLocation。。')
 				uni.showModal({
 					showCancel: false,
 					title: '温馨提示',
@@ -107,46 +98,25 @@ export default class Idnex extends Vue{
 			}
 		})
 	}
-	
-	//打开系统设置
-	openSetting(){
-		uni.openSetting()
-		uni.getSystemInfo({
-			success(res) {
-				if(res.platform=='ios'){ //IOS
-					plus.runtime.openURL("app-settings://");
-				} else if (res.platform=='android'){ //安卓
-					let main = plus.android.runtimeMainActivity();
-					
-					// Object Intent = plus.android.importClass("android.content.Intent");
-					// let mIntent = new Intent('android.settings.ACTION_SETTINGS');
-					// main.startActivity(mIntent);
-				}
-			}
-		});
-	}
 
 	getUserInfo(){
 		//获取用户信息
 		uni.getUserInfo({
 			provider: 'weixin',
-			success: function (infoRes) {
-				console.log('用户信息',infoRes);
+			success:  (infoRes)=> {
 			}
 		});
 	}
 
 	//获取地理位置
-	getLocationInfo(){ 
-		let _this=this;
+	getLocationInfo(){
 		uni.getLocation({
 			type: 'wgs84',
 			success (res:any) {
 				let latitude,longitude;
 				latitude = res.latitude.toString();
 				longitude = res.longitude.toString();
-				console.log('latitude.....',latitude,'longitude.....',longitude);
-
+				console.log(latitude,longitude)
 			}
 		});
 	}

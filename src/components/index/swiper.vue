@@ -53,7 +53,6 @@
 		// computed---------对于Vue中的计算属性,我们只需要将该计算属性名定义为一个函数,并在函数前加上get关键字即可.
 		// 原本Vue中的computed里的每个计算属性都变成了在前缀添加get的函数.
 		get ValA(){
-			console.log('我是测试 999 test cumputed')
             return this.autoplay;
 		}
 
@@ -64,7 +63,6 @@
         private emitTodo(n: string){
 			this.ValA;
 			this.addTest = this.addTest + 2;
-            console.log('怪怪的');
 		}
 		
 		// watch 使用和emit 相似
