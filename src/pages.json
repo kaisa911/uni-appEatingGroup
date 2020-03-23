@@ -12,12 +12,12 @@
         "navigationBarTitleText": "curriculum"
       }
     },
-	{
-	  "path": "pages/my/index",
-	  "style": {
-	    "navigationBarTitleText": "my"
-	  }
-	}
+    {
+      "path": "pages/userCenter/index",
+      "style": {
+        "navigationBarTitleText": "个人中心"
+      }
+    }
   ],
   "globalStyle": {
     "navigationBarTextStyle": "black",
@@ -43,12 +43,12 @@
         "selectedIconPath": "static/image/icon_API_HL.png",
         "text": "课程"
       },
-	  {
-	    "pagePath": "pages/my/index",
-	    "iconPath": "static/image/icon_API.png",
-	    "selectedIconPath": "static/image/icon_API_HL.png",
-	    "text": "我的"
-	  }
+      {
+        "pagePath": "pages/userCenter/index",
+        "iconPath": "static/image/user.png",
+        "selectedIconPath": "static/image/user_HL.png",
+        "text": "我的"
+      }
     ]
   }
 }

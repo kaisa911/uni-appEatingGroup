@@ -1,7 +1,9 @@
-import utils from './utils.js';
+import utils from './utils';
+import { DEBUG } from './api';
+import mockFunc from '../mock/index';
 
 //请求接口函数
-const request = (method: any, url: string, data: any, loading: boolean) => {
+const request = (method: any, url: string, data: any, loading?: boolean) => {
   return new Promise((resolve, reject) => {
     //显示加载动画
     if (loading) utils.showLoading();
@@ -14,6 +16,11 @@ const request = (method: any, url: string, data: any, loading: boolean) => {
     // 添加token
     // Object.assign(data, obj);
 
+    if (DEBUG) {
+      resolve(mockFunc(url));
+      if (loading) utils.hideLoading();
+      return;
+    }
     //发起请求
     uni.request({
       url,
@@ -21,7 +28,7 @@ const request = (method: any, url: string, data: any, loading: boolean) => {
       data,
       header: {
         // 数据被编码为名称/值对
-        //"Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
+        'content-type': method === 'POST' ? 'application/json' : 'application/x-www-form-urlencoded',
       },
       success: res => {
         resolve(res.data);
@@ -38,10 +45,10 @@ const request = (method: any, url: string, data: any, loading: boolean) => {
 };
 
 export default {
-  get: function(url: string, params: any, loading: boolean) {
+  get: function(url: string, params: any, loading?: boolean): any {
     return request('GET', url, params, loading);
   },
-  post: function(url: string, params: any, loading: boolean) {
+  post: function(url: string, params: any, loading?: boolean): any {
     return request('POST', url, params, loading);
   },
 };
