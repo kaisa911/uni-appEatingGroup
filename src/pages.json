@@ -61,12 +61,6 @@
       }
     },
     {
-      "path": "pages/userCenter/myCard/index",
-      "style": {
-        "navigationBarTitleText": "我的卡包"
-      }
-    },
-    {
       "path": "pages/userCenter/myCurriculum/index",
       "style": {
         "navigationBarTitleText": "我的课程"
@@ -76,6 +70,12 @@
       "path": "pages/userCenter/myOrder/index",
       "style": {
         "navigationBarTitleText": "我的预定"
+      }
+    },
+    {
+      "path": "pages/userCenter/myCard/index",
+      "style": {
+        "navigationBarTitleText": "我的卡包"
       }
     },
     {

@@ -41,6 +41,21 @@ const mockFunc = (url: string): any => {
     case api.submitEditInfo:
       data = {};
       break;
+    case api.getMyCard:
+      data = Mock.mock({
+        'myCard|1-10': [
+          {
+            'id|+1': 1,
+            'cardName|1': ['通用卡', '专属卡', '小可爱卡', '小仙女卡'],
+            'balance|1': [233, 333, 1332],
+            'money|1': [500, 1500, 2000, 999],
+            'hasActive|1-2': true,
+            'cardScale|1': ['多门店通用', '单一门店卡'],
+            activeTime: '2020/01/01 - 2020/12/31',
+          },
+        ],
+      });
+      break;
     default:
       data = {};
   }

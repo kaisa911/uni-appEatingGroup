@@ -359,3 +359,81 @@
     margin-right: 30rpx;
   }
 }
+
+.tabs {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 40rpx;
+  display: flex;
+  height: 76rpx;
+  line-height: 76rpx;
+  box-shadow: 8rpx 8rpx 8rpx #999;
+  .tab-item {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: #666;
+  }
+  .activeClass {
+    color: #89dbd7;
+  }
+}
+
+.card-item {
+  height: 300rpx;
+  border: 1px solid #f3f3f3;
+  margin: 30rpx 0;
+  padding: 20rpx;
+  background: #bfbdcc;
+  border-radius: 10rpx;
+  position: relative;
+  .card-name {
+    font-size: 32rpx;
+  }
+  .card-money {
+    display: flex;
+    height: 100rpx;
+    margin-top: 40rpx;
+    font-size: 80rpx;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-active {
+    display: flex;
+    font-size: 24rpx;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40rpx;
+  }
+  .card-scale {
+    display: flex;
+    justify-content: space-between;
+  }
+  .card-right {
+    border: 1px solid #000;
+    position: absolute;
+    right: 20rpx;
+    padding: 4rpx 10rpx;
+    top: 20rpx;
+  }
+}
+.my-card {
+  box-sizing: border-box;
+  .scroll-Y {
+    box-sizing: border-box;
+    padding: 0 40rpx;
+  }
+  .buy-card {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    position: fixed;
+    font-size: 28rpx;
+    right: 0;
+    top: 45%;
+    line-height: 80rpx;
+    text-align: center;
+    background: #d19f32;
+  }
+}

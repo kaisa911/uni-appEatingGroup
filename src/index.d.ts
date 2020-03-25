@@ -9,6 +9,11 @@ declare namespace Global {
     nickname: string;
   }
 
+  interface ITabItem {
+    id: string;
+    name: string;
+  }
+
   interface IUserInfo {
     id: string;
     name: string;

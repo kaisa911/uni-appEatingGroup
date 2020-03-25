@@ -9,5 +9,7 @@ const api = {
   getEditInfo: `${prefix}/getEditInfo`,
   /* 提交个人信息修改 */
   submitEditInfo: `${prefix}/submitEditInfo`,
+  /* 获取我的卡包的卡 */
+  getMyCard: `${prefix}/getMyCard`,
 };
 export default api;
