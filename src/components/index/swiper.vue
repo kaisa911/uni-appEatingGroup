@@ -27,7 +27,7 @@
 		@Mutation('fishLan/setSwiperItem') private setSwiperItem!: any;
 
 
-		@Action('fishLan/setSwiper') private setSwiper!: any;
+		@Action('fishLan/getBannerData') private setSwiper!: any;
 
 		//相当于原来的prop 这里 !和可选参数?是相反的, !告诉TypeScript我这里一定有值.
 		// @Prop(Number) propA!: number;

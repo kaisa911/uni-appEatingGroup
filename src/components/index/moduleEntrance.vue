@@ -8,7 +8,7 @@
 </template>
 <script lang="ts">
     import {Component, Vue } from "vue-property-decorator";
-    import { State, Mutation} from "vuex-class";
+    import { State, Mutation, Action} from "vuex-class";
     
     @Component
     export default class entrance extends Vue{
@@ -16,8 +16,22 @@
 
         @Mutation('fishLan/setEntranceList') private setEntranceList!: any;
 
+        @Action('fishLan/getEntranceData') private getEntranceData!: any;
+
         mounted(){
-            this.setEntranceList();
+            this.getEntrance();
+        }
+        
+        private async getEntrance(){
+            let res = await this.$store.dispatch("fishLan/getEntranceData", {});
+            if(res.code === 200){
+                this.setEntranceList(res.data);
+            }else{
+                uni.showModal({
+                    title: '提示',
+                    content: res.msg
+                });
+            }
         }
     }
 </script>

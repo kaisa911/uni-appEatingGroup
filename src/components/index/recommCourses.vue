@@ -30,11 +30,11 @@
 
         @State(state => state.fishLan.coursesList) private coursesList!: string;
 
-        @fishLanAction  setCourses!:Function;
+        @fishLanAction  getCourses!:Function;
 
 
         mounted(){
-            this.setCourses();
+            this.getCourses();
         }
     }
 </script>
