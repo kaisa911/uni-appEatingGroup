@@ -13,9 +13,6 @@
 	import {Component, Prop, Vue, Emit, Watch } from "vue-property-decorator";
 	import { State, Mutation, Action,namespace } from "vuex-class";
 
-	// 获取模块中的state
-	const fishLanMutation = namespace('fishLan', Mutation);
-
 	@Component
 	export default class swiper extends Vue{
 		
@@ -23,23 +20,14 @@
 		@State(state => state.fishLan.swiperList) private swiperList!: string;
 		
 		//-------以下两种方式都可以获取子模块下的mucation
-    	// @fishLanMutation  setSwiperItem:any;
+
+		// @Mutation("setSwiperItem", { namespace: "fishLan" })
+		// setSwiperItem: any;
 		@Mutation('fishLan/setSwiperItem') private setSwiperItem!: any;
 
-
-		@Action('fishLan/getBannerData') private setSwiper!: any;
+		@Action('fishLan/getBannerData') private getBannerData!: any;
 
 		//相当于原来的prop 这里 !和可选参数?是相反的, !告诉TypeScript我这里一定有值.
-		// @Prop(Number) propA!: number;
-        // @Prop({default: 'default value'}) propB!: string;
-		// @propC([String, Boolean]) propC: string | boolean;
-		// @Prop()
-		// private Index!: number;
-		// @Prop(String)
-		// private propA!:string;
-		// @Prop([String,Number])
-		// private propB!:string|number;
-		// @Prop({ default: false, type: Boolean }) radio!: boolean;
 		@Prop(Number) swiperData!: number;  
 
 		//相当于原来的data
@@ -73,7 +61,7 @@
 		}
 
 		mounted() {
-			this.setSwiper();
+			this.getBannerData();
 		}
 
 	}
@@ -82,7 +70,6 @@
 	.swiper-panel{
 		.swiper-image{
 			width:100%;
-			height:100%;
 		}
 	}
 </style>

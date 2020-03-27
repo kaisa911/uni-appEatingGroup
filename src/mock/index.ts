@@ -31,36 +31,39 @@ const mockFunc = (url: string): any => {
       })
       break;
     case api.getBannerData: 
-      data = Mock.mock([{imageName:"one",imageUrl:"./../../static/image/fish1.jpg"},
-      {imageName:"two",imageUrl:"./../../static/image/fish2.jpg"},
-      {imageName:"three",imageUrl:"./../../static/image/fish3.jpg"},
-      {imageName:"four",imageUrl:"./../../static/image/fish4.jpg"}])
+      data = Mock.mock([{imageName:"one",imageUrl:"./../../static/image/exercise13.jpg"},
+      {imageName:"two",imageUrl:"./../../static/image/exercise5.jpg"},
+      {imageName:"three",imageUrl:"./../../static/image/exercise4.jpg"},
+      {imageName:"four",imageUrl:"./../../static/image/exercise12.jpg"}])
       break;
     case api.getCourses: 
       data = Mock.mock([{
         title: '哈他瑜伽',
         des: '给与身心的解放',
         money: '68.00',
+        imageUrl: './../../static/image/exercise8.jpg',
     },{
         title: '流瑜伽',
         des: '给与身心的解放,这句话最多可以显示两行',
         money: '68.00',
+        imageUrl: './../../static/image/exercise7.jpg',
     },{
         title: '骗他瑜伽',
         des: '给与身心的解放',
         money: '68.00',
+        imageUrl: './../../static/image/exercise2.jpg',
     }])
       break;
     case api.getEntrance: 
       data = Mock.mock([
-        {imageUrl: null,name:'本周推荐'},
-        {imageUrl: null,name:'私教课程'},
-        {imageUrl: null,name:'赠一得一'},
-        {imageUrl: null,name:'购卡续费'},
-        {imageUrl: null,name:'小团体课'},
-        {imageUrl: null,name:'活力操课'},
-        {imageUrl: null,name:'静安课程'},
-        {imageUrl: null,name:'训练营'},])
+        {imageUrl: './../../static/image/exercise8.jpg',name:'本周推荐'},
+        {imageUrl: './../../static/image/exercise2.jpg',name:'私教课程'},
+        {imageUrl: './../../static/image/exercise3.jpg',name:'赠一得一'},
+        {imageUrl: './../../static/image/exercise4.jpg',name:'购卡续费'},
+        {imageUrl: './../../static/image/exercise5.jpg',name:'小团体课'},
+        {imageUrl: './../../static/image/exercise6.jpg',name:'活力操课'},
+        {imageUrl: './../../static/image/exercise13.jpg',name:'静安课程'},
+        {imageUrl: './../../static/image/exercise8.jpg',name:'训练营'},])
       break;
     default:
       data = {};

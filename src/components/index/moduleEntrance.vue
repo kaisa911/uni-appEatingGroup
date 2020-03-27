@@ -1,7 +1,7 @@
 <template>
     <view class="entrance-content">
         <view class="entrance-item" v-for="(item,index) in entranceList" :key="index">
-            <view class="entrance-icon"><view class="icon-image"></view></view>
+            <view class="entrance-icon"><view class="icon-image"><image class="icon-image entrance-image" :src="item.imageUrl"></image></view></view>
             <view class="icon-name">{{item.name}}</view>
         </view>
     </view>
@@ -39,25 +39,29 @@
     .entrance-content{
         display: flex;
         flex-wrap: wrap;  
-        font-size:12px;
+        font-size:26rpx;
         color:#333;
-        padding: 5px;
+        padding: 10rpx;
         .entrance-item{
             width: 25%;
-            margin-bottom: 6px;
+            margin-bottom: 10rpx;
             .entrance-icon{
                 display:flex;
                 justify-content: center;
             }
             .icon-image{
-                height: 50px;
-                width: 50px;
+                height: 120rpx;
+                width: 120rpx;
                 background: #eee;
-                border-radius: 25px;
+                border-radius: 75rpx;
 
             }
+            .entrance-image{
+                object-fit: cover;
+                height:100%;
+            }
             .icon-name,.entrance-icon{
-                padding: 5px 0px 0 0;
+                padding: 8rpx 0px 0 0;
             }
         }
         
