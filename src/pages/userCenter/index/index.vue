@@ -5,20 +5,19 @@
       @handleBuyCard="handleBuyCard"
       @handleEditInfo="handleEditInfo"
       @handleViewRight="handleViewRight"
-    ></user-info>
-    <my-posscession
+    />
+    <my-possession
       :userInfo="userInfo"
       @handleToPossession="handleToPossession"
-    ></my-posscession>
-    <nav-list :navList="navList" @handleToPages="handleToPages"></nav-list>
+    />
+    <nav-list :navList="navList" @handleToPages="handleToPages" />
   </view>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { State, Mutation } from 'vuex-class';
 import NavList from '../components/navList.vue';
-import MyPosscession from '../components/possession.vue';
+import MyPossession from '../components/possession.vue';
 import UserInfo from '../components/userInfo.vue';
 import userMixin from './userMixin';
 import request from '../../../utils/request';
@@ -29,12 +28,11 @@ import api from '../../../utils/api';
   mixins: [userMixin],
   components: {
     NavList,
-    MyPosscession,
+    MyPossession,
     UserInfo
   }
 })
 export default class Idnex extends Vue {
-  private title: string = 'myTitle'; //响应式属性
   private userInfo: Global.IUserInfo = {
     id: '',
     name: '',
@@ -78,11 +76,11 @@ export default class Idnex extends Vue {
     this.$set(this, 'userInfo', data.userInfo);
   }
   // 跳转到相关页面
-  private handleToPages(url: string): void {
+  private static handleToPages(url: string): void {
     uni.navigateTo({ url });
   }
   // 跳转到卡包，预约，兑换券页
-  private handleToPossession(index: number): void {
+  private static handleToPossession(index: number): void {
     const list: string[] = [
       '/pages/userCenter/myOrder/index',
       '/pages/userCenter/myCard/index',
@@ -95,7 +93,7 @@ export default class Idnex extends Vue {
   }
 
   // 编辑信息
-  private handleEditInfo(): void {
+  private static handleEditInfo(): void {
     uni.navigateTo({
       url: '/pages/userCenter/editInfo/index'
     });

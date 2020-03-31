@@ -48,12 +48,12 @@
 
     },
     "mp-weixin": { /* 小程序特有相关 */
-        "usingComponents":true,
-        "appid": "",
-        "setting" : {
-        	"urlCheck" : true
-        }
-    },
+    "usingComponents":true,
+    "appid": "",
+    "setting" : {
+        "urlCheck" : true
+    }
+},
     "mp-alipay" : {
         "usingComponents" : true
     },

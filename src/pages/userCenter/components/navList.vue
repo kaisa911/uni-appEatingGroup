@@ -7,7 +7,7 @@
       v-for="(item) in navList"
     >
       <text class="item-name">{{item.name}}</text>
-      <text class="arrow"></text>
+      <text class="arrow" />
     </view>
   </view>
 </template>

@@ -5,6 +5,7 @@ declare namespace Global {
     onShow(): void;
     onHide(): void;
   }
+
   interface IState {
     nickname: string;
   }

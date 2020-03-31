@@ -25,9 +25,6 @@ const mockFunc = (url: string): any => {
         },
       });
       break;
-    case api.feedback:
-      data = {};
-      break;
     case api.getEditInfo:
       data = Mock.mock({
         'name|1': ['鲁大壮', '苏大强'], //名字为随机中文名字
@@ -37,9 +34,6 @@ const mockFunc = (url: string): any => {
         birthday: '1991-11-16',
         phone: '13000001111',
       });
-      break;
-    case api.submitEditInfo:
-      data = {};
       break;
     case api.getMyCard:
       data = Mock.mock({
