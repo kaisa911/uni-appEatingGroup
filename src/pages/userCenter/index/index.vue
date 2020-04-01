@@ -59,6 +59,16 @@ export default class Idnex extends Vue {
     this.getUserInfo();
   }
 
+  onShareAppMessage(res: any): any {
+    return {
+      title: '页面分享',
+      path: '/pages/userCenter/index',
+      success: function(res: any) {
+        console.log(res);
+      }
+    };
+  }
+
   async onShow() {
     await this.getUserInfo();
   }
@@ -76,14 +86,14 @@ export default class Idnex extends Vue {
     this.$set(this, 'userInfo', data.userInfo);
   }
   // 跳转到相关页面
-  private static handleToPages(url: string): void {
+  private handleToPages(url: string): void {
     uni.navigateTo({ url });
   }
   // 跳转到卡包，预约，兑换券页
-  private static handleToPossession(index: number): void {
+  private handleToPossession(index: number): void {
     const list: string[] = [
       '/pages/userCenter/myOrder/index',
-      '/pages/userCenter/myCard/index',
+      '/pages/userCenter/myCard/index?id=23333333&name=haha',
       '/pages/userCenter/myCurriculum/index'
     ];
 
@@ -93,7 +103,7 @@ export default class Idnex extends Vue {
   }
 
   // 编辑信息
-  private static handleEditInfo(): void {
+  private handleEditInfo(): void {
     uni.navigateTo({
       url: '/pages/userCenter/editInfo/index'
     });

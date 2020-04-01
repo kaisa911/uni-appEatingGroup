@@ -1,5 +1,6 @@
 <template>
   <view class="my-card">
+    <view class="nav-bar">测试标题</view>
     <Tabs
       :currentId="currentId"
       :tabList="tabList"
@@ -48,9 +49,24 @@ export default class MyCard extends Vue {
   private pageNum: number = 1;
   private pageSize: number = 10;
 
-  onLoad() {}
+  onLoad(params: any) {
+    console.log(params);
+    const { id, name } = params;
+  }
   onShow() {
     this.fetchCardList(this.currentId);
+    uni.getSystemInfo({
+      success(res: any) {
+        let totalTopHeight = 68;
+        if (res.model.indexOf('iPhone X') !== -1) {
+          totalTopHeight = 88;
+        } else if (res.model.indexOf('iphone') !== -1) {
+          totalTopHeight = 64;
+        }
+        console.log(res);
+      },
+      fail(e) {}
+    });
   }
 
   // 变更tab

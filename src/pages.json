@@ -75,7 +75,8 @@
     {
       "path": "pages/userCenter/myCard/index",
       "style": {
-        "navigationBarTitleText": "我的卡包"
+        "navigationBarTitleText": "我的卡包",
+        "navigationStyle": "custom"
       }
     },
     {
