@@ -1,47 +1,67 @@
-import request from '../../utils/request';
-import api from '../../utils/api';
-export default {
+import { MutationTree, ActionTree, Module } from 'vuex';
+import request from '../../utils/request';
+import api from '../../utils/api';
+import { RootState } from './../roottypes';
+
+//接口
+export interface fishLanState {
+    swiperList:[],
+    entranceList:[],
+    coursesList:[]
+}
+     
+//重新赋值
+const state: fishLanState = {
+    swiperList: [],
+    entranceList: [],
+    coursesList: []
+}
+    
+
+const mutations:MutationTree<fishLanState> = {
+    setSwiperItem(state,swiperData){
+        state.swiperList = swiperData;
+     },
+     setEntranceList(state, list){
+         state.entranceList = list;
+     },
+     setcoursesList(state, courses){
+         state.coursesList = courses;
+     }
+}
+
+const actions:ActionTree<fishLanState,RootState> ={
+    async setOpenId(){
+        const {data } = await request.post(api.getOpenId,{});
+        uni.setStorage({
+            key: 'OpenID ',
+            data: data.OpenID,              
+        });
+        uni.setStorage({
+            key: 'session_key ',
+            data: data.session_key,             
+        });
+    },
+    
+    async getBannerData({commit}){
+        const {data } = await request.post(api.getBannerData,{});
+        commit('setSwiperItem', data);
+    },
+    
+    async getCourses({commit}){
+        const {data } = await request.post(api.getCourses,{});
+        commit('setcoursesList', data);
+    },
+    
+    async getEntranceData(){
+        const data = await request.post(api.getEntrance,{});
+        return data;
+    }
+}
+
+export const fishLan: Module<fishLanState,RootState> = {
     namespaced: true,
-    state: {
-        swiperList: [],
-        entranceList: [],
-        coursesList: []
-    },
-    getters: {},
-    mutations: {
-        setSwiperItem(state: any,swiperData: string){
-           state.swiperList = swiperData;
-        },
-        setEntranceList(state: any , list: string){
-            state.entranceList = list;
-        },
-        setcoursesList(state:any, courses:string){
-            state.coursesList = courses;
-        }
-    },
-    actions: {
-        async setOpenId(context:any){
-            const {data } = await request.post(api.getOpenId,{});
-            uni.setStorage({
-                key: 'OpenID ',
-                data: data.OpenID,				
-            });
-            uni.setStorage({
-                key: 'session_key ',
-                data: data.session_key,				
-            });
-        },
-        async getBannerData(context:any){
-            const {data } = await request.post(api.getBannerData,{});
-            context.commit('setSwiperItem', data);
-        },
-        async getCourses(context:any){
-            const {data } = await request.post(api.getCourses,{});
-            context.commit('setcoursesList', data);
-        },
-        async getEntranceData(context:any){
-            const data = await request.post(api.getEntrance,{});
-            return data;
-        }
-    }
+    state,
+    mutations,
+    actions
 }

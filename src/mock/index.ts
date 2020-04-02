@@ -31,10 +31,10 @@ const mockFunc = (url: string): any => {
       })
       break;
     case api.getBannerData: 
-      data = Mock.mock([{imageName:"one",imageUrl:"./../../static/image/exercise13.jpg"},
-      {imageName:"two",imageUrl:"./../../static/image/exercise5.jpg"},
-      {imageName:"three",imageUrl:"./../../static/image/exercise4.jpg"},
-      {imageName:"four",imageUrl:"./../../static/image/exercise12.jpg"}])
+      data = Mock.mock([{imageName:"one",imageUrl:"./../static/image/exercise13.jpg"},
+      {imageName:"two",imageUrl:"./../static/image/exercise5.jpg"},
+      {imageName:"three",imageUrl:"./../static/image/exercise4.jpg"},
+      {imageName:"four",imageUrl:"./../static/image/exercise12.jpg"}])
       break;
     case api.getCourses: 
       data = Mock.mock([{
@@ -60,7 +60,7 @@ const mockFunc = (url: string): any => {
         {imageUrl: './../../static/image/exercise2.jpg',name:'私教课程'},
         {imageUrl: './../../static/image/exercise3.jpg',name:'赠一得一'},
         {imageUrl: './../../static/image/exercise4.jpg',name:'购卡续费'},
-        {imageUrl: './../../static/image/exercise5.jpg',name:'小团体课'},
+        {imageUrl: './../../static/image/exercise9.jpg',name:'小团体课'},
         {imageUrl: './../../static/image/exercise6.jpg',name:'活力操课'},
         {imageUrl: './../../static/image/exercise13.jpg',name:'静安课程'},
         {imageUrl: './../../static/image/exercise8.jpg',name:'训练营'},])

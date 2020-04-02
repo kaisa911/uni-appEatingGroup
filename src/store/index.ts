@@ -1,21 +1,25 @@
 import Vue from 'vue';
-import Vuex from 'vuex';
-
-import fishLan from './module/fishLan';
-
+import Vuex, { StoreOptions } from 'vuex';
+import {fishLan} from './module/fishLan';
+import {courseDetails} from './module/courseDetails';
+import {course} from './module/course';
+import { RootState } from './rootTypes';
+ 
 Vue.use(Vuex);
-
-const store = new Vuex.Store({
+ 
+const store: StoreOptions<RootState> = {
   modules: {
-    fishLan
+    fishLan,
+    course,
+    courseDetails
   },
   state: {
     nickname: '未设置',
   },
   mutations: {
-    change: function(state: Global.IState, nickname: string): void {
+    change(state, nickname) {
       state.nickname = nickname;
-    },
-  },
-});
-export default store;
+    }
+  }
+}
+export default new Vuex.Store<RootState>(store)

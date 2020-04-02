@@ -1,5 +1,6 @@
 <script lang="ts">
 import { Vue } from 'vue-property-decorator';
+import './static/iconfont/iconfont.css';
 
 export default class App extends Vue implements Global.IVue {
   mpType: String = 'app';

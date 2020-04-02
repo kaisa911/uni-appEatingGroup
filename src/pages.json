@@ -7,9 +7,15 @@
       }
     },
     {
-      "path": "pages/curriculum/index",
+      "path": "pages/courseDetails/index",
       "style": {
-        "navigationBarTitleText": "curriculum"
+        "navigationBarTitleText": "courseDetails"
+      }
+    },
+    {
+      "path": "pages/course/index",
+      "style": {
+        "navigationBarTitleText": "course"
       }
     },
     {
@@ -38,7 +44,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/curriculum/index",
+        "pagePath": "pages/course/index",
         "iconPath": "static/image/icon_API.png",
         "selectedIconPath": "static/image/icon_API_HL.png",
         "text": "课程"

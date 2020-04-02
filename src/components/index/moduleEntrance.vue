@@ -1,6 +1,6 @@
 <template>
     <view class="entrance-content">
-        <view class="entrance-item" v-for="(item,index) in entranceList" :key="index">
+        <view class="entrance-item" v-for="(item,index) in entranceList" :key="index" @click="navigateTo">
             <view class="entrance-icon"><view class="icon-image"><image class="icon-image entrance-image" :src="item.imageUrl"></image></view></view>
             <view class="icon-name">{{item.name}}</view>
         </view>
@@ -14,12 +14,15 @@
     export default class entrance extends Vue{
         @State(state => state.fishLan.entranceList) private entranceList!: string;
 
-        @Mutation('fishLan/setEntranceList') private setEntranceList!: any;
+        @Mutation('fishLan/setEntranceList') private setEntranceList!: Function;
 
-        @Action('fishLan/getEntranceData') private getEntranceData!: any;
+        @Action('fishLan/getEntranceData') private getEntranceData!: Function;
 
         mounted(){
             this.getEntrance();
+        }
+
+        navigateTo(){
         }
         
         private async getEntrance(){

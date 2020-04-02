@@ -1,38 +1,37 @@
 <template>
-	<view class="content">
-		<swiper @handleEmit="handleEmit"></swiper>
+	<view class="index-page">
+		<swiper @handleEmit="handleEmit" :swiperData="swiperList"></swiper>
 		<entrance></entrance>
 		<recommCourses></recommCourses>
-		<!-- <view>
-      		<text class="title">{{title}}</text>
-      		<text class="title">{{stateNickname}}</text>
-    	</view> -->
+		<newUserCoupon ref="newUserCopon"></newUserCoupon>
 	</view>
 </template>
 
 <script lang="ts">
 import { Component,Vue } from "vue-property-decorator";
 import { State, Mutation,Action } from "vuex-class";
-import swiper from './../../components/index/swiper.vue';
+import swiper from './../../components/swiper.vue';
 import entrance from './../../components/index/moduleEntrance.vue';
 import recommCourses from './../../components/index/recommCourses.vue';
+import newUserCoupon  from './../../components/index/newUserCoupon.vue';
 @Component({
 	components:{
 		swiper,
 		entrance,
-		recommCourses
+		recommCourses,
+		newUserCoupon 
 	}
 })
 export default class Idnex extends Vue{
-	private　title:string  = 'myTitle'; //响应式属性
+	private　title:string  = 'myTitle'; //响应式属性;
 	@State('nickname') private stateNickname!: string;
-	@Mutation('change') private CHANGENICKNAME!: Function;
+	@State(state => state.fishLan.swiperList) private swiperList!: string;
 	@Action('fishLan/setOpenId') private setOpenId!: any;
+	@Action('fishLan/getBannerData') private getBannerData!: Function;
 
 
 	onLoad(){
-		let a:string = '123'; 
-		this.CHANGENICKNAME('10');
+		this.getBannerData();
 		this.isGetLocation();
 		this.getOpenId();
 	}
@@ -55,7 +54,9 @@ export default class Idnex extends Vue{
 				if (!res.authSetting['scope.userLocation']) { 
 					this.setAuthorizeInfo()
 				}else{
-					this.getLocationInfo()
+					this.getLocationInfo();
+					let vm:any = this.$refs.newUserCopon;
+					vm.openOffersPopup();
 				}
 			}
 		});
@@ -67,6 +68,8 @@ export default class Idnex extends Vue{
 			scope: 'scope.userLocation',
 			success:()=> {
 				this.getLocationInfo();
+				let vm:any = this.$refs.newUserCopon;
+				vm.openOffersPopup();
 			},
 			fail(){
 				uni.showModal({
@@ -89,19 +92,17 @@ export default class Idnex extends Vue{
 				let latitude,longitude;
 				latitude = res.latitude.toString();
 				longitude = res.longitude.toString();
-				console.log(latitude,longitude)
 			}
 		});
 	}
 
 	handleEmit(argument:any){
-		console.log('我有点懵啊',argument)
 	}
 }
 </script>
 
 <style>
-	.content {
+	.index-page {
 		text-align: center;
 		height: 400upx;
 	}
