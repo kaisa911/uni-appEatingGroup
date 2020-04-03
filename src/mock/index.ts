@@ -39,7 +39,7 @@ const mockFunc = (url: string): any => {
       data = Mock.mock({
         'myCard|1-10': [
           {
-            'id|+1': 1,
+            'id|+1': 132232,
             'cardName|1': ['通用卡', '专属卡', '小可爱卡', '小仙女卡'],
             'balance|1': [233, 333, 1332],
             'money|1': [500, 1500, 2000, 999],
