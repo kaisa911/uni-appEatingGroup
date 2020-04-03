@@ -1,17 +1,17 @@
 <template>
     <scroll-view class="course-list-panel">
-       <view v-for="(item,index) in courselist" :key="index" class="course-item">
+       <view v-for="(item,index) in getCourseByType" :key="index" class="course-item">
            <view class="course-image"><image src="item.imageUrl"></image></view>
            <view class="course-content">
                 <text class="course-title">{{item.title}}</text>
-                <text class="line">{{item.tiem}}</text>
+                <text class="line">{{item.time}}</text>
                 <text class="line">{{item.personNum}}人课程</text>
                 <view class="line">
                     <text v-for="(proName,index) in item.pro" :key="index" class="pro-item">{{proName}}</text>
                 </view>
            </view>
            <view class="course-statu">
-               <text v-if="item.status === 0">可预约</text>
+               <text v-if="item.status === 0" @click="reservation(item)">可预约</text>
                <text v-else-if="item.status === 1">满人可排队</text>
                <text v-else-if="item.status === 2">报名已结束</text>
             </view>
@@ -19,15 +19,43 @@
     </scroll-view>
 </template>
 <script lang="ts">
-import {Component,Vue} from 'vue-property-decorator';
+import {Component,Vue, Prop} from 'vue-property-decorator';
 import { State, Mutation, Action,namespace} from 'vuex-class'
 
 @Component({
 })
 export default class courseList extends Vue{
-    @State(state => state.course.courselist) private courselist!:[]
-    
-    scroll(){
+    @State(state => state.course.courselist) private courselist!:[];
+    @Action('course/getCourselist') private getCourselist!:Function;
+
+    @Prop() courseType!:string;
+
+    //所以课程还是对应类型下的课程
+    get getCourseByType(){
+        let routes = getCurrentPages(); // 获取当前打开过的页面路由数组
+        let curRouteurl = routes[routes.length - 1].route; // 获取当前页面路由，也就是最后一个打开的页面路由 options
+
+        if(curRouteurl === 'pages/assignedCourse/index'){
+            let list = this.courselist.filter((item:any) => {
+                return item.type ==  this.courseType;
+            });
+            return list;
+            
+        }else{
+            return this.courselist;
+        }
+    }
+
+    //跳转至课程详情页
+    reservation(item:any){
+        uni.navigateTo({
+            url: '/pages/courseDetails/index?id='+item.id,
+        });
+    }
+
+    mounted() {
+        //获取课程列表
+        this.getCourselist();
     }
 }
 </script>

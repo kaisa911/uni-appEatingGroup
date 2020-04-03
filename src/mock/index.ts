@@ -56,14 +56,160 @@ const mockFunc = (url: string): any => {
       break;
     case api.getEntrance: 
       data = Mock.mock([
-        {imageUrl: './../../static/image/exercise8.jpg',name:'本周推荐'},
-        {imageUrl: './../../static/image/exercise2.jpg',name:'私教课程'},
-        {imageUrl: './../../static/image/exercise3.jpg',name:'赠一得一'},
-        {imageUrl: './../../static/image/exercise4.jpg',name:'购卡续费'},
-        {imageUrl: './../../static/image/exercise9.jpg',name:'小团体课'},
-        {imageUrl: './../../static/image/exercise6.jpg',name:'活力操课'},
-        {imageUrl: './../../static/image/exercise13.jpg',name:'静安课程'},
-        {imageUrl: './../../static/image/exercise8.jpg',name:'训练营'},])
+        {imageUrl: './../../static/image/exercise8.jpg',name:'本周推荐',type:'recommend'},
+        {imageUrl: './../../static/image/exercise2.jpg',name:'私教课程',type:'private'},
+        {imageUrl: './../../static/image/exercise3.jpg',name:'赠一得一',type:'discount'},
+        {imageUrl: './../../static/image/exercise4.jpg',name:'购卡续费',type:'Renew'},
+        {imageUrl: './../../static/image/exercise9.jpg',name:'小团体课',type:'team'},
+        {imageUrl: './../../static/image/exercise6.jpg',name:'活力操课',type:'vitality'},
+        {imageUrl: './../../static/image/exercise13.jpg',name:'静安课程',type:'Jingan'},
+        {imageUrl: './../../static/image/exercise8.jpg',name:'训练营',type:'training'}])
+      break;
+      case api.getCourselist: 
+      data = Mock.mock([{
+        id:1,
+        title: '塑身课1',
+        des: '给与身心的解放',
+        money: '68.00',
+        imageUrl: './../../static/image/exercise8.jpg',
+        personNum: 8,
+        time: '12-15 10.00-10.45',
+        pro: ['塑性','拉伸','小团体课'],
+        status: 0,
+        store: '闵行店铺',
+        address: '闵行区，浦江镇，联航路',
+        type: 'private'
+    },{
+        id:2,
+        title: '拉伸团体课2',
+        des: '给与身心的解放,这句话最多可以显示两行',
+        money: '68.00',
+        imageUrl: './../../static/image/exercise7.jpg',
+        personNum: 8,
+        time: '12-15 10.00-10.45',
+        pro: ['塑性','拉伸','小团体课'],
+        status: 1,
+        store: '静安店铺',
+        address: '汶水路，疆埸三路',
+        type: 'recommend'
+    },{
+        id:3,
+        title: '活力体操3',
+        des: '给与身心的解放',
+        money: '68.00',
+        imageUrl: './../../static/image/exercise2.jpg',
+        personNum: 8,
+        time: '12-15 10.00-10.45',
+        pro: ['塑性'],
+        status: 2,
+        store: '静安店铺',
+        address: '汶水路，疆埸三路',
+        type: 'private'
+    },{
+        id:4,
+        title: '骗他瑜伽4',
+        des: '给与身心的解放',
+        money: '68.00',
+        imageUrl: './../../static/image/exercise2.jpg',
+        personNum: 8,
+        time: '12-15 10.00-10.45',
+        pro: ['塑性','拉伸','小团体课'],
+        status: 2,
+        store: '静安店铺',
+        address: '汶水路，疆埸三路',
+        type: 'discount'
+    },{
+        id:5,
+        title: '骗他瑜伽5',
+        des: '给与身心的解放',
+        money: '68.00',
+        imageUrl: './../../static/image/exercise2.jpg',
+        personNum: 8,
+        time: '12-15 10.00-10.45',
+        pro: ['塑性','拉伸','小团体课'],
+        status: 2,
+        store: '静安店铺',
+        address: '汶水路，疆埸三路',
+        type: 'Renew'
+    },{
+        id:6,
+        title: '骗他瑜伽6',
+        des: '给与身心的解放',
+        money: '68.00',
+        imageUrl: './../../static/image/exercise2.jpg',
+        personNum: 8,
+        time: '12-15 10.00-10.45',
+        pro: ['塑性','拉伸','小团体课'],
+        status: 0,
+        store: '静安店铺',
+        address: '汶水路，疆埸三路',
+        type: 'team'
+    },{
+        id:7,
+        title: '骗他瑜伽8',
+        des: '给与身心的解放',
+        money: '68.00',
+        imageUrl: './../../static/image/exercise2.jpg',
+        personNum: 8,
+        time: '12-15 10.00-10.45',
+        pro: ['塑性','拉伸','小团体课'],
+        store: '静安店铺',
+        address: '汶水路，疆埸三路',
+        status: 1,
+        type: 'team'
+    },{
+        id:8,
+        title: '骗他瑜伽8',
+        des: '给与身心的解放',
+        money: '68.00',
+        imageUrl: './../../static/image/exercise2.jpg',
+        personNum: 8,
+        time: '12-15 10.00-10.45',
+        pro: ['塑性','拉伸','小团体课'],
+        status: 2,
+        store: '静安店铺',
+        address: '汶水路，疆埸三路',
+        type: 'team'
+    },{
+        id:9,
+        title: '骗他瑜伽9',
+        des: '给与身心的解放',
+        money: '68.00',
+        imageUrl: './../../static/image/exercise2.jpg',
+        personNum: 8,
+        time: '12-15 10.00-10.45',
+        pro: ['塑性','拉伸','小团体课'],
+        status: 2,
+        store: '静安店铺',
+        address: '汶水路，疆埸三路',
+        type: 'vitality'
+    },{
+        id:10,
+        title: '骗他瑜伽10',
+        des: '给与身心的解放',
+        money: '68.00',
+        imageUrl: './../../static/image/exercise2.jpg',
+        personNum: 8,
+        time: '12-15 10.00-10.45',
+        pro: ['塑性','拉伸','小团体课'],
+        status: 2,
+        store: '静安店铺',
+        address: '汶水路，疆埸三路',
+        type: 'Jingan'
+    },{
+        id:11,
+        title: '骗他瑜伽11',
+        des: '给与身心的解放',
+        money: '68.00',
+        imageUrl: './../../static/image/exercise2.jpg',
+        personNum: 8,
+        time: '12-15 10.00-10.45',
+        pro: ['塑性','拉伸','小团体课'],
+        status: 2,
+        store: '静安店铺',
+        address: '汶水路，疆埸三路',
+        type: 'training'
+    }])
       break;
     default:
       data = {};

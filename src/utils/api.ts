@@ -6,5 +6,6 @@ const api = {
   getBannerData: `${prefix}/getBannerData`,
   getCourses: `${prefix}/getCourses`,
   getEntrance: `${prefix}/getEntrance`,
+  getCourselist: `${prefix}/getCourselist`,
 };
 export default api;

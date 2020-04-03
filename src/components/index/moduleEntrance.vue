@@ -1,6 +1,6 @@
 <template>
     <view class="entrance-content">
-        <view class="entrance-item" v-for="(item,index) in entranceList" :key="index" @click="navigateTo">
+        <view class="entrance-item" v-for="(item,index) in entranceList" :key="index" @click="navigateTo(item)">
             <view class="entrance-icon"><view class="icon-image"><image class="icon-image entrance-image" :src="item.imageUrl"></image></view></view>
             <view class="icon-name">{{item.name}}</view>
         </view>
@@ -22,7 +22,13 @@
             this.getEntrance();
         }
 
-        navigateTo(){
+        navigateTo(item:{type:null}){
+            uni.navigateTo({
+                url: '/pages/assignedCourse/index?type='+item.type,
+                    success: res => {},
+                    fail: () => {},
+                    complete: () => {}
+            });
         }
         
         private async getEntrance(){

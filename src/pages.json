@@ -3,19 +3,31 @@
     {
       "path": "pages/index/index",
       "style": {
-        "navigationBarTitleText": "index"
+        "navigationBarTitleText": "FITLIFE"
+      }
+    },
+    {
+      "path": "pages/payOrder/index",
+      "style": {
+        "navigationBarTitleText": "订单只付"
       }
     },
     {
       "path": "pages/courseDetails/index",
       "style": {
-        "navigationBarTitleText": "courseDetails"
+        "navigationBarTitleText": "课程详情"
       }
     },
     {
       "path": "pages/course/index",
       "style": {
-        "navigationBarTitleText": "course"
+        "navigationBarTitleText": "课程"
+      }
+    },
+    {
+      "path": "pages/assignedCourse/index",
+      "style": {
+        "navigationBarTitleText": "课程"
       }
     },
     {

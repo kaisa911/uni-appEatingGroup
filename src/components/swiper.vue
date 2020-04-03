@@ -15,8 +15,6 @@
 
 	@Component
 	export default class swiper extends Vue{
-		
-		//-------以下两种方式都可以获取子模块下的mucation
 		// @Mutation("setSwiperItem", { namespace: "fishLan" })
 		// setSwiperItem: any;
 		@Mutation('fishLan/setSwiperItem') private setSwiperItem!: Function;

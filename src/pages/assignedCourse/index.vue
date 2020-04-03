@@ -1,7 +1,7 @@
 <template>
-    <view class="course-page">
+    <view class="assignedCourse-page">
         <Week></Week>
-        <courseList :courseType="null"></courseList>
+        <courseList :courseType="courseType"></courseList>
     </view>
 </template>
 
@@ -16,9 +16,13 @@
             courseList
         }
     })
-    //所有课程的列表
+    
+    //不同种类的课程
     export default class curriculum extends Vue{
+        private courseType:string = '';
 
+        onLoad(option:{type:''}){
+            this.courseType = option.type;
+        }
     }
 </script>
-

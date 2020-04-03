@@ -13,6 +13,7 @@ import coupon  from '../coupon.vue';
         coupon
     }
 })
+//新手大礼包弹框
 export default class newUserCopon extends Vue{
     private openOffers:boolean = false;
     private  newUserOffers:Object = {

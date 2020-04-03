@@ -2,7 +2,7 @@
     <view class="recomm-content">
          <view class="recomm-tab">
             <text class="recomm-title">推荐课程</text>
-            <text class="recomm-more">更多</text>
+            <text class="recomm-more" @click="moreCoursers">更多</text>
          </view>
          <view class="recomm-item-panel">
             <view class="recomm-item" v-for="(item,index) in coursesList" :key="index">
@@ -32,6 +32,12 @@
 
         mounted(){
             this.getCourses();
+        }
+
+        moreCoursers(){
+            uni.switchTab({
+                url: '/pages/course/index'
+            });
         }
     }
 </script>
